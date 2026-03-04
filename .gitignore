@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Downloaded images
+downloaded_images/
+
+# Test reports
+test_report.json
+browserstack_report.json
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Browser profiles
+chrome_profiles/
+firefox_profiles/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Node modules (if using npm packages)
+node_modules/
+npm-debug.log
+
+# Other
+.venv
+pip-log.txt
+pip-delete-this-directory.txt

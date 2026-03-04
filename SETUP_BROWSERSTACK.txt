@@ -1,0 +1,93 @@
+# SETUP YOUR BROWSERSTACK CREDENTIALS
+
+## Step 1: Get Your Credentials from BrowserStack
+
+1. Go to https://www.browserstack.com
+2. Sign in or create an account
+3. Go to Account > Settings > Automate
+4. Copy your **Username** and **Access Key**
+
+## Step 2: Add Credentials to Your Project
+
+### Option A: Using the Setup Command (Recommended)
+
+```powershell
+python main.py --setup-browserstack YOUR_USERNAME YOUR_ACCESS_KEY
+```
+
+**Example:**
+```powershell
+python main.py --setup-browserstack john_doe 1a2b3c4d5e6f7g8h
+```
+
+This will:
+- Save credentials to `.env` file
+- Configure environment variables  
+- Show "CONFIGURED" when you run `python main.py --config`
+
+### Option B: Manual Setup
+
+Edit `.env` file in the project root and add:
+
+```
+BROWSERSTACK_USER=your_username
+BROWSERSTACK_KEY=your_access_key
+```
+
+Example:
+```
+BROWSERSTACK_USER=john_doe
+BROWSERSTACK_KEY=1a2b3c4d5e6f7g8h
+```
+
+## Step 3: Verify Setup
+
+```powershell
+python main.py --config
+```
+
+You should see:
+```
+BrowserStack User: joh*** [CONFIGURED]
+BrowserStack Key: 1a2b*** [CONFIGURED]
+```
+
+## Step 4: Run Tests
+
+```powershell
+# Full workflow (scraping + BrowserStack)
+python main.py
+
+# Or just BrowserStack tests
+python main.py --browserstack-only
+
+# Or just local scraping
+python main.py --local-only
+```
+
+## Important Notes
+
+- **Never commit .env to git** (it's in .gitignore)
+- Keep your Access Key private
+- Free trial = 1 parallel session
+- Paid = 5+ parallel sessions
+- Code auto-detects and adapts to your limits
+
+## Troubleshooting
+
+### "BrowserStack credentials not configured"
+Run: `python main.py --setup-browserstack YOUR_USERNAME YOUR_ACCESS_KEY`
+
+### "Invalid credentials"
+1. Verify at https://www.browserstack.com/accounts/settings
+2. Copy-paste directly (avoid typos)
+3. Re-run setup command
+
+### Tests run locally but not on BrowserStack
+1. Check credentials are correct
+2. Check account is active at https://www.browserstack.com
+3. Try with --browsers 1 (free trial limit)
+
+---
+
+**See BROWSERSTACK_CREDENTIALS_SETUP.md for detailed instructions.**

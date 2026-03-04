@@ -1,0 +1,69 @@
+{
+  "scraper": {
+    "headless": true,
+    "max_wait_time": 20,
+    "max_retries": 3,
+    "timeout": 30
+  },
+  "browserstack": {
+    "max_workers": 5,
+    "timeout": 300,
+    "browsers": [
+      {
+        "browser": "Chrome",
+        "version": "latest",
+        "os": "Windows",
+        "os_version": "11"
+      },
+      {
+        "browser": "Firefox",
+        "version": "latest",
+        "os": "Windows",
+        "os_version": "11"
+      },
+      {
+        "browser": "Safari",
+        "version": "latest",
+        "os": "OS X",
+        "os_version": "Sonoma"
+      },
+      {
+        "browser": "Chrome",
+        "version": "latest",
+        "os": "Android",
+        "os_version": "13.0",
+        "device": "Samsung Galaxy S23"
+      },
+      {
+        "browser": "Safari",
+        "version": "latest",
+        "os": "iOS",
+        "os_version": "17.2",
+        "device": "iPhone 15"
+      }
+    ]
+  },
+  "article_scraping": {
+    "max_articles": 5,
+    "section": "opinion",
+    "language": "es"
+  },
+  "image_download": {
+    "enabled": true,
+    "max_retries": 3,
+    "timeout": 10,
+    "output_directory": "downloaded_images"
+  },
+  "translation": {
+    "use_free_api": true,
+    "source_language": "es",
+    "target_language": "en",
+    "min_word_occurrences": 2
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/scraper.log",
+    "max_bytes": 10485760,
+    "backup_count": 5
+  }
+}
